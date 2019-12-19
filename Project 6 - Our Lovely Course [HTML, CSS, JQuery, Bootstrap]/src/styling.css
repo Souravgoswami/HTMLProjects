@@ -1,0 +1,364 @@
+@font-face {
+	src: local('Bellefair Regular'), local('Bellefair-Regular'), url(../assets/fonts/Bellefair.woff2) format('woff2') ;
+	font-family: "Bellefair" ;
+	font-style: normal ;
+	font-weight: 400 ;
+	font-display: swap ;
+}
+
+body {
+	position: relative ;
+	font-family: "Bellefair", sans;
+	font-size: 20px ;
+}
+
+#bg-vid {
+	background-color: #2074FF ;
+	position: fixed ;
+	min-height: 100% ;
+	min-width: 100% ;
+	z-index: -1 ;
+}
+
+#my-nav-bar {
+	font-size: 20px ;
+	background-color: rgba(20, 20, 20, 0.5) ;
+}
+
+#menu {
+	overflow: hidden ;
+}
+
+.icon-bar {
+	background-color: #fff !important ;
+}
+
+.menu-button, .menu-button:active {
+	background-color: transparent !important ;
+	transition: all 0.25s ease ;
+}
+
+.menu-button:hover {
+	background-color: #55f !important ;
+	box-shadow: 0px 0px 2px 0px #fff ;
+}
+
+.navbar-custom .navbar-brand {
+	font-size: 24px ;
+	color: #fff ;
+	transition: all 0.2s ease ;
+}
+
+.navbar-custom ul li a {
+	color: #fff !important ;
+	padding: 0px !important ;
+	margin: 16px !important ;
+	display: inline-block ;
+	background-color: rgba(0, 0, 0, 0) !important ;
+	transition: all 0.25s ease-in ;
+}
+
+.navbar-custom ul li a::before {
+	content: "" ;
+	background: #fff ;
+	position: absolute ;
+	width: 100% ;
+	height: 2px ;
+	bottom: 0 ;
+	transform: scaleX(0) ;
+	transition: all 0.25s ease-out 0s ;
+	background: linear-gradient(45deg, #ff0, #f55, #f5f, #55f) ;
+}
+
+.navbar-custom ul li a:hover::before {
+	transform: scaleX(1) ;
+	background: linear-gradient(45deg, #55f, #f5f, #f55, #ff0) ;
+}
+
+.navbar-custom .navbar-header a:hover {
+	text-shadow: 0px 0px 4px #ca0 ;
+	color: #fff ;
+}
+
+.navbar-custom .active {
+	text-shadow: 0px 0px 6px #3ce3b4 ;
+}
+
+.fullscreen {
+	background-color: transparent ;
+	color: #fff ;
+	text-align: center ;
+	height: 100vh ;
+	padding-bottom: 0px ;
+}
+
+#intro {
+	padding-top: 35vh ;
+}
+
+.btn {
+	font-size: 18px ;
+	margin-top: 30px ;
+	padding: 8px 45px ;
+}
+
+.btn:link, .btn:visited {
+	color: #fff ;
+	background-color: #f55 ;
+	transition: all 0.2s ease ;
+}
+
+.btn:hover {
+	color: #fff ;
+	background-color: #55f ;
+}
+
+.btn:active {
+	color: #fff ;
+	background-color: #990 ;
+	box-shadow: 0px 0px 8px 0px #fff ;
+}
+
+#about {
+	text-align: center ;
+	color: #fff ;
+	position: relative ;
+	padding-top: 35vh ;
+	padding-bottom: 0vh ;
+	text-shadow: 2px 2px 4px #222 ;
+}
+
+#about h2 {
+	font-size: 40px ;
+	font-weight: bold ;
+}
+
+.about-contents {
+	transition: all 0.25s ease-out ;
+}
+
+.about-image {
+	height: 120px ;
+}
+
+.container {
+	max-width: 1000px ;
+}
+
+#promise {
+	padding-top: 25vh ;
+	position: relative !important ;
+}
+
+.carousel-inner .item img {
+	position: relative ;
+	margin: 0 auto ;
+	height: 340px !important ;
+}
+
+.carousel-caption {
+	position: relative ;
+	left: auto ;
+	right: auto ;
+	height: 100px ;
+}
+
+.carousel-control, .carousel-control:active, .carousel-control:visited, .carousel-control:focus {
+	background: transparent !important ;
+	opacity: 0.25 !important ;
+	padding: 0px ;
+	margin: 0px ;
+	height: 340px ;
+	transition: all 0.2s ease-out ;
+}
+
+.carousel-control:hover {
+	opacity: 1 !important ;
+}
+
+.carousel-indicators {
+	position: relative !important ;
+	margin-top: 20px !important ;
+	opacity: 0.5 ;
+	transition: opacity 0.2s ease ;
+}
+
+.carousel-indicators:hover {
+	opacity: 1 ;
+}
+
+.nav-down {
+	background: url("../assets/img/down-arrow.svg") center center no-repeat ;
+	padding: 2% ;
+	position: absolute ;
+	left: 50% ;
+	margin-left: -1% ;
+	animation: myAnim 3s infinite ;
+	transition: all 0.2s linear ;
+	z-index: 10 ;
+}
+
+.nav-up {
+	background: url("../assets/img/up-arrow.svg") center center no-repeat ;
+	padding: 2% ;
+	position: absolute ;
+	left: 50% ;
+	margin-left: -1% ;
+	animation: myAnim 3s infinite ;
+	transition: all 0.2s linear ;
+	z-index: 10 ;
+}
+
+.nav-down:hover, .nav-up:hover {
+	opacity: 0.25 ;
+}
+
+@keyframes myAnim {
+	0%, 100% {
+		filter: hue-rotate(0deg) ;
+	}
+
+	50% {
+		filter: hue-rotate(360deg) ;
+	}
+}
+
+.snow-container {
+	position: fixed ;
+	z-index: -1 ;
+}
+
+#navdown1 {
+	top: 93vh ;
+}
+
+#navdown2 {
+	top: 193vh ;
+}
+
+#navup1 {
+	top: 290vh ;
+}
+
+.nav-down:hover, .nav-up:hover {
+	opacity: 0.25 ;
+}
+
+@keyframes myAnim {
+	0%, 100% {
+		filter: hue-rotate(0deg) ;
+	}
+
+	50% {
+		filter: hue-rotate(360deg) ;
+	}
+}
+
+.snow-container {
+	position: fixed ;
+	z-index: -1 ;
+}
+
+@media (max-width: 435px), (max-height: 435px) {
+	.navbar-custom .navbar-brand {
+		font-size: 12px !important ;
+	}
+
+	#about {
+		font-size: 10px !important ;
+	}
+
+	#about h2 {
+		font-size: 14px !important ;
+	}
+
+	.about-image {
+		height: 40px !important ;
+	}
+}
+
+@media (max-width: 992px) {
+	#about {
+		padding-top: 15vh ;
+	}
+
+	#promise {
+		margin-top: 20vh ;
+	}
+}
+
+@media (max-height: 820px) {
+	.nav-down, .nav-up {
+		display: none ;
+	}
+}
+
+@media (max-width: 768px), (max-height: 575px) {
+	.navbar-custom .navbar-brand {
+		font-size: 16px ;
+	}
+
+	.carousel-inner .item img {
+		height: 180px !important ;
+	}
+
+	.carousel-inner h2 {
+		font-size: 15px ;
+	}
+
+	.carousel-control, .carousel-control:active, .carousel-control:visited, .carousel-control:focus {
+		height: 180px ;
+	}
+
+	#about {
+		font-size: 18px ;
+	}
+
+	#about h2 {
+		font-size: 22px ;
+	}
+
+	.about-image {
+		height: 80px ;
+	}
+}
+
+@media (max-device-width: 768px), (max-device-height: 575px) {
+	#bg-vid {
+		display: none ;
+	}
+
+	#img1 {
+		display: block ;
+	}
+}
+
+#img1 {
+	min-width: 100% ;
+	min-height: 100% ;
+	position: fixed ;
+	z-index: -1 ;
+}
+
+.footer {
+	background-color: rgba(0, 0, 0, 0.250) ;
+	margin: 20px ;
+}
+
+.footer p {
+	color: rgba(0, 0, 0, 0) ;
+	margin: 5px ;
+	margin-left: 0px ;
+	background: linear-gradient(45deg, #fff, #fff) ;
+	-webkit-text-fill-color: transparent ;
+	background-clip: text ;
+	text-shadow: 0px 0px 2px #fff ;
+	transition: all 0.125s ease ;
+}
+
+.footer p:hover {
+	background: linear-gradient(45deg, #ff0, #f5f, #ff5, #55f) ;
+	-webkit-text-fill-color: transparent ;
+	background-clip: text ;
+	text-shadow: 0px 0px 6px #fff ;
+}
