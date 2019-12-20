@@ -1,2 +1,4 @@
 # HTMLProjects
-My HTML projects. This course was taught by Issam on Udemy, but these codes are heavily modified + beautified. If you like them, feel free to use without giving any credits...
+This project was guided by Issam on Udemy. I have highly modified what I am learning from various sources and trying put the fun stuff here!
+
+Please Report Bugs if you Find them. Suggestions are happily welcomed.
