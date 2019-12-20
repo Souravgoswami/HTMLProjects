@@ -1,0 +1,179 @@
+@font-face {
+	src: local('Baumans Regular'), url(../assets/fonts/baumans.woff2) format('woff2') ;
+	font-family: "Baumans" ;
+	font-style: normal ;
+	font-weight: 400 ;
+	font-display: swap ;
+}
+
+html {
+	font-family: "baumans" ;
+	user-select: none ;
+	transition: all 0.25s linear ;
+}
+
+.theme {
+	position: fixed ;
+	width: 50px ;
+	top: 0px ;
+	display: none ;
+	left: 100% ;
+	margin-left: -50px ;
+	opacity: 1 ;
+	cursor: pointer ;
+	transition: all 0.25s ease-out ;
+}
+
+.theme:hover {
+	opacity: 0.75 ;
+}
+
+#dialog {
+	display: none ;
+}
+
+#container {
+	height: 480px ;
+	width: 640px ;
+	position: relative ;
+	background-color: #8EDBFF ;
+	margin: 100px auto ;
+	padding: 20px ;
+	border-radius: 15px ;
+	box-shadow: 0px 4px 0px 0px #88f ;
+	transition: all 0.125s ease-out ;
+}
+
+#lives {
+	float: right ;
+}
+
+#lives > img {
+	width: 16px ;
+	height: 16px ;
+	margin: 0 3px ;
+}
+
+#score {
+	float: left ;
+}
+
+#playArea {
+	position: relative ;
+	width: 528px ;
+	height: 320px ;
+	margin-bottom: 70px ;
+	background-color: #fff ;
+	box-shadow: 0px 4px 0px 0px #f55 ;
+	margin: 50px auto 10px auto ;
+	border-radius: 4px ;
+	overflow: hidden ;
+}
+
+canvas {
+	position: absolute ;
+}
+
+.fruits {
+	position: absolute ;
+	display: none ;
+	width: 100px ;
+	height: 100px ;
+}
+
+#gameOver {
+	font-size: 25px ;
+	width: 350px ;
+	height: 200px ;
+	display: table ;
+	margin:  60px auto ;
+	background-color: #55f ;
+	color: #fff ;
+	border-radius: 8px ;
+	text-align: center ;
+	animation: myAnim1 0.5s ease-in ;
+}
+
+#instruction {
+	width: 480px ;
+	height: 50px ;
+	background-color: #ff5aab ;
+	color: #fff ;
+	margin: 10px auto ;
+	text-align: center ;
+	line-height: 50px ;
+	border-bottom: 1px dashed #fff ;
+	display: block ;
+	box-shadow: 0px 0px 4px 0px #fff ;
+	border-radius: 4px ;
+	animation: myAnim2 0.5s ease-out ;
+}
+
+.button, .hoverElements {
+	background-color: #fff ;
+	color: #000 ;
+	padding: 10px ;
+	display: inline-block ;
+	border-radius: 6px ;
+	cursor: pointer ;
+	transition: all 0.2s ease ;
+	animation: myAnim2 0.25s ease-out ;
+}
+
+.button:hover {
+	background-color: #74BB25 ;
+	color: #fff ;
+	box-shadow: 0px 0px 8px 0px #fff ;
+}
+
+.hoverElements {
+	box-shadow: 0px 4px 0px 0px #88f ;
+}
+
+.hoverElements:hover {
+	background-color: #FF5584 ;
+	color: #fff ;
+	box-shadow: 0px 4px 0px 0px #fff ;
+}
+
+.hearts {
+	animation: myAnim3 0.2s ease ;
+}
+
+#end {
+	text-align: center ;
+}
+
+#startButton {
+	margin-left: auto ;
+}
+
+@keyframes myAnim1 {
+	from {
+		opacity: 0 ;
+	}
+
+	to {
+		opacity: 1 ;
+	}
+}
+
+@keyframes myAnim2 {
+	from {
+		transform: scaleY(-1) ;
+	}
+
+	to {
+		transform: scaleY(1) ;
+	}
+}
+
+@keyframes myAnim3 {
+	from {
+		transform: scaleX(-1) ;
+	}
+
+	to {
+		transform: scaleX(1) ;
+	}
+}

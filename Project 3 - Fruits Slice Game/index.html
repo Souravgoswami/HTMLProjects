@@ -1,0 +1,61 @@
+ <!Doctype HTML>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes"/>
+		<title>Fruits Slicing Game</title>
+
+		<script src="src/jquery-3.4.1.min.js"></script>
+		<script src="src/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+		<link href="src/jquery-ui-1.12.1/jquery-ui.min.css" rel="stylesheet">
+		<script src="src/particles.js"></script>
+
+		<script src="src/jquery.js"></script>
+		<link href="src/styling.css" rel="stylesheet">
+	</head>
+
+	<body id="bodydiv">
+		<a id="theme">
+			<div>
+				<img src="assets/images/light.svg" class="theme" id="light">
+				<img src="assets/images/dark.svg" class="theme" id="dark">
+			</div>
+		</a>
+
+		<div id="container">
+			<div id="dialog">Do you want to Reload this Window?</div>
+			<div id="score" class="hoverElements">Score: <span id="scoreVal">0</span></div>
+			<div id="lives" class="hearts hoverElements"></div>
+
+			<div id="playArea" class="theming">
+				<canvas id="particles"></canvas>
+				<div id="fruitsContainer"></div>
+
+				<div id="gameOver">
+					<p>Fruit Ninja</p>
+					<p>Press Start Button to Begin</p>
+				</div>
+			</div>
+
+			<div id="instruction">Press Start Button</div>
+			<div id="end"><div class="button" id="startButton">Start Game</div></div>
+
+			<audio id="swoosh">
+				<source src="assets/audio/swoosh.mp3"></source>
+				<source "audio/swoosh.ogg"></source>
+			</audio>
+
+			<audio id="missed">
+				<source src="assets/audio/missed.mp3"></source>
+				<source src="assets/audio/missed.ogg"></source>
+			</audio>
+		</div>
+
+		<script>
+			var particles = new Particles()
+			particles.initialize(document.getElementById('particles'), document.getElementById('playArea'))
+			particles.start()
+		</script>
+	</body>
+</html>
