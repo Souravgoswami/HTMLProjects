@@ -254,11 +254,6 @@ body {
 	}
 }
 
-.snow-container {
-	position: fixed ;
-	z-index: -1 ;
-}
-
 @media (max-width: 435px), (max-height: 435px) {
 	.navbar-custom .navbar-brand {
 		font-size: 12px !important ;
