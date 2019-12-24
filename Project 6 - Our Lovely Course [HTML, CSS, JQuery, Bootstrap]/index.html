@@ -1,11 +1,8 @@
 <!Doctype HTML>
 
-<!-- Down Arrow Button not Working -->
-
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<!-- <link href="https://fonts.googleapis.com/css?family=Bellefair&display=swap" rel="stylesheet"> -->
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<title>Our Lovely Course</title>
 
@@ -46,8 +43,6 @@
 			</div>
 		</nav>
 
-		<a class="nav-down" id="navdown1" onclick="scrollY('#about')"></a>
-
 		<!-- Create the Home Section with Title, Goal and Join Us button -->
 		<div class="jumbotron fullscreen" id="home">
 			<div class="container" id="intro">
@@ -55,9 +50,8 @@
 				<h2>Go from Zero-Skills to Cash-Earning Web Developer</h2>
 				<p><a class="btn" href="#">Join Us Now!</a></p>
 			</div>
+			<a class="nav-down" id="navdown1" onclick="scrollY('#about')"></a>
 		</div>
-
-		<a class="nav-down" id="navdown2" onclick="scrollY('#promise')"></a>
 
 		<!-- Create About Section - Course Details -->
 		<div id="about" class="container fullscreen">
@@ -90,11 +84,10 @@
 					</p>
 				</div>
 			</div>
+			<a class="nav-down" id="navdown2" onclick="scrollY('#promise')"></a>
 		</div>
 
 		<!-- Create Carousel -->
-		<a class="nav-up" id="navup1" onclick="scrollY('#home')"></a>
-
 		<div id="promise" class="container-fluid fullscreen">
 			<div class="carousel slide" id="my-carousel" data-ride="carousel">
 				<div class="carousel-inner">
@@ -163,17 +156,18 @@
 							</h2>
 						</div>
 					</div>
-				</div>
 
-				<ol class="carousel-indicators">
-					<li data-target="#my-carousel" data-slide-to="0" class="active"></li>
-					<li data-target="#my-carousel" data-slide-to="1"></li>
-					<li data-target="#my-carousel" data-slide-to="2"></li>
-					<li data-target="#my-carousel" data-slide-to="3"></li>
-					<li data-target="#my-carousel" data-slide-to="4"></li>
-					<li data-target="#my-carousel" data-slide-to="5"></li>
-					<li data-target="#my-carousel" data-slide-to="6"></li>
-				</ol>
+					<ol class="carousel-indicators">
+						<li data-target="#my-carousel" data-slide-to="0" class="active"></li>
+						<li data-target="#my-carousel" data-slide-to="1"></li>
+						<li data-target="#my-carousel" data-slide-to="2"></li>
+						<li data-target="#my-carousel" data-slide-to="3"></li>
+						<li data-target="#my-carousel" data-slide-to="4"></li>
+						<li data-target="#my-carousel" data-slide-to="5"></li>
+						<li data-target="#my-carousel" data-slide-to="6"></li>
+					</ol>
+					<a class="nav-up" id="navup1" onclick="scrollY('#home')"></a>
+				</div>
 
 				<a class="left carousel-control" href="#my-carousel" data-slide="prev">
 					<span class="glyphicon glyphicon-chevron-left"></span>
@@ -188,25 +182,21 @@
 		</div>
 
 		<!-- Add a Footer for Our Website -->
-		<div class="footer">
-			<div class="container">
-				<p>&copy; Developed by Sourav Goswami [Please Edit or Delete this Line]</p>
-			</div>
-		</div>
+		<a id="footer" href="https://github.com/Souravgoswami/HTMLProjects/tree/master/Project%206%20-%20Our%20Lovely%20Course%20%5BHTML%2C%20CSS%2C%20JQuery%2C%20Bootstrap%5D">
+			<&copy; Developed by Sourav Goswami [Please Edit or Delete this Line]/>
+		</a>
 
 		<script>
-
-			$('.carousel').carousel({
-				interval: 2500
-			})
+			$('.carousel').carousel({ interval: 1500 })
 
 			$(() => {
 				var contents = Array.prototype.slice.call(document.getElementsByClassName('about-contents'))
-				for(i of contents) {
+				for(let i of contents) {
 					i.onmouseover = function() {
 						for(j of contents) { j.style.filter = 'opacity(0.6) saturate(2)' }
 						this.style.filter = 'none'
 					}
+
 					i.onmouseout = () => { for(j of contents) { j.style.filter = 'none' } }
 				}
 			})
@@ -217,8 +207,9 @@
 
 			function scrollY(element) {
 				var e = $(element)
-				var eOT = e.offset().top + 50
+				var eOT = e.offset().top
 				var scrollDown = window.pageYOffset < eOT
+				eOT -= scrollDown ? -50 : 50
 				var j = window.pageYOffset, k = 1
 
 				var interval = setInterval(() => {
