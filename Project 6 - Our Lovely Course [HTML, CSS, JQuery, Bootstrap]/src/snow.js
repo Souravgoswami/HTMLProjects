@@ -4,7 +4,8 @@ class SnowField {
 		this.canvas = null
 		this.width = 0
 		this.height = 0
-		this.snow = 200
+		this.snow = 250
+		this.fps = 1000 / this.fps
 		this.snowParticles = []
 	}
 
@@ -17,10 +18,6 @@ class SnowField {
 			this.height = window.innerHeight
 			this.canvas.width = this.width
 			this.canvas.height = this.height
-
-			for (let i = 0 ; i < this.snow ; ++i)
-				this.snowParticles[i] = new Snow(Math.random() * this.width, Math.random() * this.height, Math.random() * 2 + 1)
-
 			this.update()
 		})
 
@@ -33,7 +30,7 @@ class SnowField {
 		for (let i = 0 ; i < this.snow ; ++i )
 			this.snowParticles[i] = new Snow(Math.random() * this.width, Math.random() * this.height)
 
-		setInterval(() => { this.update() }, 1000 / this.fps)
+		setInterval(() => { this.update() }, this.fps)
 	}
 
 	update() {
@@ -42,14 +39,17 @@ class SnowField {
 
 		for (let i = 0 ; i < this.snow ; ++i) {
 			var snow = this.snowParticles[i]
-			snow.x += Math.sin(i)
-			snow.y += snow.yspeed
+			snow.x += snow.xSpeed
+			snow.y += snow.ySpeed
 
 			if ((snow.y > this.height) || (snow.x < -snow.size || snow.x > this.width))
 				this.snowParticles[i] = new Snow(Math.random() * this.width, 0)
 
 			ctx.fillStyle = `rgba(255, 255, 255, ${this.height / (snow.y * 2)})`
-			ctx.fillRect(snow.x, snow.y, snow.size, snow.size)
+
+			ctx.beginPath()
+			ctx.arc(snow.x, snow.y, snow.size, 3.1, 3)
+			ctx.fill()
 		}
 	}
 }
@@ -58,7 +58,10 @@ class Snow {
 	constructor(x, y) {
 		this.x = x
 		this.y = y
-		this.size = Math.random() * 2 + 1
-		this.yspeed = Math.random() * 5 + 1
+		this.size = Math.random() * 1.5 + 0.5
+
+		this.ySpeed = Math.random() * 5 + 1
+		this.xSpeed = Math.random() * 5 + 1
+		if (Math.random() < 0.5) this.xSpeed *= -1
 	}
 }

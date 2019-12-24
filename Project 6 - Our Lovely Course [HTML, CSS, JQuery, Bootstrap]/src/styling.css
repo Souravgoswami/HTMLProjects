@@ -7,7 +7,6 @@
 }
 
 body {
-	position: relative ;
 	font-family: "Bellefair", sans;
 	font-size: 20px ;
 }
@@ -23,10 +22,6 @@ body {
 #my-nav-bar {
 	font-size: 20px ;
 	background-color: rgba(20, 20, 20, 0.5) ;
-}
-
-#menu {
-	overflow: hidden ;
 }
 
 .icon-bar {
@@ -72,10 +67,20 @@ body {
 
 .navbar-custom ul li a:hover::before {
 	transform: scaleX(1) ;
-	background: linear-gradient(45deg, #55f, #f5f, #f55, #ff0) ;
+	animation: myAnim2 3s linear infinite ;
 }
 
-.navbar-custom .navbar-header a:hover {
+@keyframes myAnim2 {
+	0% {
+		filter: hue-rotate(0deg) ;
+	}
+
+	100% {
+		filter: hue-rotate(360deg) ;
+	}
+}
+
+.navbar-custom .navbar-header a:hover, .navbar-header a:active {
 	text-shadow: 0px 0px 4px #ca0 ;
 	color: #fff ;
 }
@@ -88,7 +93,6 @@ body {
 	background-color: transparent ;
 	color: #fff ;
 	text-align: center ;
-	height: 100vh ;
 	padding-bottom: 0px ;
 }
 
@@ -122,8 +126,7 @@ body {
 #about {
 	text-align: center ;
 	color: #fff ;
-	position: relative ;
-	padding-top: 35vh ;
+	padding-top: 30vh ;
 	padding-bottom: 0vh ;
 	text-shadow: 2px 2px 4px #222 ;
 }
@@ -147,17 +150,15 @@ body {
 
 #promise {
 	padding-top: 25vh ;
-	position: relative !important ;
 }
 
 .carousel-inner .item img {
-	position: relative ;
 	margin: 0 auto ;
 	height: 340px !important ;
 }
 
 .carousel-caption {
-	position: relative ;
+	position: relative !important ;
 	left: auto ;
 	right: auto ;
 	height: 100px ;
@@ -189,24 +190,18 @@ body {
 
 .nav-down {
 	background: url("../assets/img/down-arrow.svg") center center no-repeat ;
-	padding: 2% ;
-	position: absolute ;
-	left: 50% ;
-	margin-left: -1% ;
-	animation: myAnim 3s infinite ;
-	transition: all 0.2s linear ;
-	z-index: 10 ;
 }
 
 .nav-up {
 	background: url("../assets/img/up-arrow.svg") center center no-repeat ;
-	padding: 2% ;
-	position: absolute ;
-	left: 50% ;
-	margin-left: -1% ;
-	animation: myAnim 3s infinite ;
-	transition: all 0.2s linear ;
-	z-index: 10 ;
+}
+
+.nav-down, .nav-up {
+	padding: 30px ;
+	display: inline-block ;
+	margin-top: 5vh ;
+	transition: all 0.2s ease ;
+	animation: myAnim 5s linear infinite ;
 }
 
 .nav-down:hover, .nav-up:hover {
@@ -226,32 +221,6 @@ body {
 .snow-container {
 	position: fixed ;
 	z-index: -1 ;
-}
-
-#navdown1 {
-	top: 93vh ;
-}
-
-#navdown2 {
-	top: 193vh ;
-}
-
-#navup1 {
-	top: 290vh ;
-}
-
-.nav-down:hover, .nav-up:hover {
-	opacity: 0.25 ;
-}
-
-@keyframes myAnim {
-	0%, 100% {
-		filter: hue-rotate(0deg) ;
-	}
-
-	50% {
-		filter: hue-rotate(360deg) ;
-	}
 }
 
 @media (max-width: 435px), (max-height: 435px) {
@@ -335,25 +304,23 @@ body {
 	z-index: -1 ;
 }
 
-.footer {
-	background-color: rgba(0, 0, 0, 0.250) ;
-	margin: 20px ;
-}
-
-.footer p {
-	color: rgba(0, 0, 0, 0) ;
-	margin: 5px ;
-	margin-left: 0px ;
+#footer {
+	margin: 100px 0 0 0 ;
+	user-select: none ;
+	display: inline-block ;
+	text-decoration: none ;
+	cursor: help ;
 	background: linear-gradient(45deg, #fff, #fff) ;
 	-webkit-text-fill-color: transparent ;
 	background-clip: text ;
 	text-shadow: 0px 0px 2px #fff ;
-	transition: all 0.125s ease ;
+	transition: all 0.5s ease ;
 }
 
-.footer p:hover {
+#footer:hover, footer:active {
 	background: linear-gradient(45deg, #ff0, #f5f, #ff5, #55f) ;
 	-webkit-text-fill-color: transparent ;
 	background-clip: text ;
 	text-shadow: 0px 0px 6px #fff ;
+	animation: myAnim2 2s linear infinite ;
 }
